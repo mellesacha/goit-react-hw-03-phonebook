@@ -8,6 +8,8 @@ class ContactForm extends Component  {
         name: '',
         number: ''
     }
+
+
     
     handleInput = (e) => {
 

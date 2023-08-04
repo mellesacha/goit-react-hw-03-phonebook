@@ -5,7 +5,8 @@ const Filter = ({search, handlInput}) => {
     return (
         <Label> Find contacts by name
             <Input
-            type="text"
+                type="text"
+            name="filter"
             value={search}
             onChange={handlInput} />
         </Label>
