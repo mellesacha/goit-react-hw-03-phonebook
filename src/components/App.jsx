@@ -35,12 +35,16 @@ export class App extends Component {
       ...contact,
       id: nanoid()
     }
-  
-    this.setState(prevState => 
-      this.state.contacts.find(contact => contact.name.toLowerCase() === newContact.name.toLowerCase())
+
+    this.state.contacts.find(contact => contact.name.toLowerCase() === newContact.name.toLowerCase())
           ? (alert(`${newContact.name} is already in contacts`))
-          : { contacts: [{ ...newContact }, ...prevState.contacts] }
-    )
+      : this.setState(prevState => { return { contacts: [{ ...newContact }, ...prevState.contacts] } }) 
+  
+    // this.setState(prevState => 
+    //   this.state.contacts.find(contact => contact.name.toLowerCase() === newContact.name.toLowerCase())
+    //       ? (alert(`${newContact.name} is already in contacts`))
+    //       : { contacts: [{ ...newContact }, ...prevState.contacts] }
+    // )
 
   }
 
